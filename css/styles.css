@@ -72,11 +72,18 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 .btn-primary {
-  background: linear-gradient(135deg, #f0d693, var(--gold-soft));
-  color: #5a4212;
+  background: linear-gradient(135deg, #f7e6ab 0%, #eecf84 100%);
+  color: #4a3510;            /* dark espresso: high contrast on every gradient stop */
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35); /* keeps text crisp over the gradient */
   box-shadow: 0 12px 26px -12px rgba(168, 118, 29, 0.7);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -12px rgba(168, 118, 29, 0.85); }
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #f9ebb8 0%, #ecca79 100%);
+  color: #4a3510;
+  box-shadow: 0 18px 34px -12px rgba(168, 118, 29, 0.85);
+}
 
 /* ---------- Header ---------- */
 .site-header {
