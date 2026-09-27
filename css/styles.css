@@ -223,8 +223,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 }
 .benefit { padding: 34px 26px; text-align: center; position: relative; }
 .benefit + .benefit::before { content: ""; position: absolute; left: 0; top: 28%; bottom: 28%; width: 1px; background: rgba(31, 51, 82, 0.18); }
-.benefit h3 { font-size: 1.7rem; font-weight: 600; color: #0d4a45; margin-bottom: 8px; } /* dark teal */
-.benefit p { margin: 0; color: #0d4a45; font-size: 1rem; font-weight: 500; }
+.benefit h3 { font-size: 1.7rem; font-weight: 600; color: #16566b; margin-bottom: 8px; } /* teal-blue */
+.benefit p { margin: 0; color: #16566b; font-size: 1rem; font-weight: 500; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
