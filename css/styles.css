@@ -75,6 +75,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   background: linear-gradient(120deg, #f6d873 0%, #e8a94a 48%, #d67b39 100%); /* clear gold to amber to terracotta */
   color: #2a1c06;            /* near-black brown, stays readable across the whole gradient */
   font-weight: 700;
+  font-size: 1.12rem;        /* slightly larger for the wider layout */
+  padding: 18px 44px;
   text-shadow: 0 1px 0 rgba(255, 236, 200, 0.5); /* keeps text crisp over the gradient */
   box-shadow: 0 12px 26px -12px rgba(168, 118, 29, 0.75);
 }
