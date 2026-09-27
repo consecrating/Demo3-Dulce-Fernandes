@@ -93,13 +93,13 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   inset: 0 0 auto 0;
   z-index: 50;
   padding: 12px 0;
-  background: rgba(16, 58, 56, 0.78);   /* semi-transparent blue-green (teal) */
+  background: rgba(22, 86, 107, 0.78);   /* semi-transparent #16566b */
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(230, 200, 130, 0.18);
   transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), padding 0.3s var(--ease);
 }
 .site-header.is-scrolled {
-  background: rgba(12, 48, 46, 0.92);
+  background: rgba(22, 86, 107, 0.92);
   box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.6);
   padding: 8px 0;
 }
@@ -135,7 +135,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   display: flex;
   flex-direction: column;
   padding: 8px;
-  background: rgba(14, 52, 50, 0.97);
+  background: rgba(19, 74, 92, 0.97);
   border: 1px solid rgba(230, 200, 130, 0.28);
   border-radius: 14px;
   box-shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.7);
@@ -249,7 +249,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
     justify-content: flex-start;
     gap: 20px;
     padding: 96px 30px 40px;
-    background: rgba(14, 52, 50, 0.98);
+    background: rgba(19, 74, 92, 0.98);
     transform: translateX(100%);
     transition: transform 0.35s var(--ease);
     z-index: 60;
