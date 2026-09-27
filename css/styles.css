@@ -113,7 +113,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 .brand { display: inline-flex; flex-direction: column; line-height: 1; color: var(--gold-soft); }
 .brand-name { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .brand-drop { font-size: 2.1rem; }
-.brand-tag { font-family: var(--sans); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.34em; text-transform: uppercase; margin-top: 6px; color: var(--gold-soft); }
+.brand-tag { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; margin-top: 6px; color: var(--gold-soft); }
 
 .primary-nav { display: flex; align-items: center; gap: clamp(20px, 2.8vw, 50px); }
 .nav-link { font-size: 1rem; font-weight: 500; color: var(--cream); position: relative; padding: 4px 0; transition: color 0.2s var(--ease); }
