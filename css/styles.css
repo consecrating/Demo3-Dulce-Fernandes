@@ -90,13 +90,14 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
-  padding: 14px 0;
-  background: linear-gradient(180deg, rgba(20, 15, 11, 0.78), rgba(20, 15, 11, 0));
+  padding: 12px 0;
+  background: rgba(22, 16, 11, 0.82);
+  backdrop-filter: blur(7px);
+  border-bottom: 1px solid rgba(230, 200, 130, 0.16);
   transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), padding 0.3s var(--ease);
 }
 .site-header.is-scrolled {
-  background: rgba(24, 18, 12, 0.94);
-  backdrop-filter: blur(10px);
+  background: rgba(20, 14, 9, 0.95);
   box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.7);
   padding: 8px 0;
 }
