@@ -27,7 +27,40 @@
     navToggle.setAttribute("aria-expanded", String(open));
     navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
-  Array.prototype.forEach.call(primaryNav.querySelectorAll(".nav-link"), function (link) {
-    link.addEventListener("click", closeMenu);
+  /* Dropdown (Offers) */
+  var dropdown = document.getElementById("offersDropdown");
+  var dropdownToggle = dropdown ? dropdown.querySelector(".nav-link-toggle") : null;
+  var mq = window.matchMedia("(max-width: 720px)");
+
+  function closeDropdown() {
+    if (!dropdown) return;
+    dropdown.classList.remove("is-open");
+    if (dropdownToggle) dropdownToggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (dropdownToggle) {
+    dropdownToggle.addEventListener("click", function (e) {
+      // On mobile the toggle expands the submenu instead of navigating.
+      // On desktop hover handles it, but click still toggles for keyboard/touch.
+      if (mq.matches) e.preventDefault();
+      var open = dropdown.classList.toggle("is-open");
+      dropdownToggle.setAttribute("aria-expanded", String(open));
+    });
+  }
+
+  /* Close menu / dropdown when a real link is clicked */
+  Array.prototype.forEach.call(primaryNav.querySelectorAll(".nav-link:not(.nav-link-toggle), .dropdown-link"), function (link) {
+    link.addEventListener("click", function () {
+      closeMenu();
+      closeDropdown();
+    });
+  });
+
+  /* Close dropdown on outside click and Escape */
+  document.addEventListener("click", function (e) {
+    if (dropdown && !dropdown.contains(e.target)) closeDropdown();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeDropdown(); closeMenu(); }
   });
 })();
