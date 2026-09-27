@@ -72,17 +72,17 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
 }
 .btn-primary {
-  background: linear-gradient(135deg, #f7e6ab 0%, #e6b955 100%); /* visible gold gradient */
-  color: #3d2b08;            /* dark espresso text, stays readable on every gradient stop */
+  background: linear-gradient(120deg, #f6d873 0%, #e8a94a 48%, #d67b39 100%); /* clear gold to amber to terracotta */
+  color: #2a1c06;            /* near-black brown, stays readable across the whole gradient */
   font-weight: 700;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); /* keeps text crisp over the gradient */
-  box-shadow: 0 12px 26px -12px rgba(168, 118, 29, 0.7);
+  text-shadow: 0 1px 0 rgba(255, 236, 200, 0.5); /* keeps text crisp over the gradient */
+  box-shadow: 0 12px 26px -12px rgba(168, 118, 29, 0.75);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #f9ecb6 0%, #eac267 100%);
-  color: #3d2b08;
-  box-shadow: 0 18px 34px -12px rgba(168, 118, 29, 0.85);
+  background: linear-gradient(120deg, #f8de84 0%, #edb055 48%, #dd8442 100%);
+  color: #2a1c06;
+  box-shadow: 0 18px 36px -12px rgba(168, 118, 29, 0.9);
 }
 
 /* ---------- Header ---------- */
