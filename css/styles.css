@@ -113,7 +113,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 .brand-drop { font-size: 2.1rem; }
 .brand-tag { font-family: var(--sans); font-size: 0.58rem; font-weight: 600; letter-spacing: 0.34em; text-transform: uppercase; margin-top: 6px; color: var(--gold-soft); }
 
-.primary-nav { display: flex; align-items: center; gap: 34px; }
+.primary-nav { display: flex; align-items: center; gap: clamp(26px, 3.6vw, 58px); }
 .nav-link { font-size: 1rem; font-weight: 500; color: var(--cream); position: relative; padding: 4px 0; transition: color 0.2s var(--ease); }
 .nav-link::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 2px; background: var(--gold); transition: width 0.25s var(--ease); }
 .nav-link:hover { color: var(--gold-soft); }
