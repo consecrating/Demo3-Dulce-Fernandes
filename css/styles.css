@@ -27,8 +27,25 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
 a { color: inherit; text-decoration: none; }
+
+/* ---------- Content lock (deterrent) ---------- */
+html.locked, html.locked body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+html.locked input,
+html.locked textarea,
+html.locked [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
 
 .container {
   width: 100%;
