@@ -122,9 +122,9 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 .benefits {
   position: relative;
   background: var(--cream);
-  background-image: linear-gradient(rgba(251, 246, 238, 0.82), rgba(251, 246, 238, 0.88)), url("../assets/img/paper-bg.jpg");
+  background-image: linear-gradient(rgba(253, 249, 242, 0.2), rgba(253, 249, 242, 0.2)), url("../assets/img/benefits-bg.jpg");
   background-size: cover;
-  background-position: center bottom;
+  background-position: center;
 }
 .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .benefit { padding: 34px 26px; text-align: center; position: relative; }
