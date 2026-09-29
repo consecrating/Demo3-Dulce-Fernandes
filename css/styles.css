@@ -106,8 +106,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 56px;
   max-width: none;
-  /* Left keeps the logo aligned with the hero; smaller right padding shifts the nav toward the right edge */
-  padding-inline: clamp(28px, 5vw, 84px) clamp(16px, 1.6vw, 26px);
+  /* Left keeps the logo aligned with the hero; right padding nudges the nav in from the edge */
+  padding-inline: clamp(28px, 5vw, 84px) clamp(28px, 3.2vw, 58px);
 }
 
 .brand { display: inline-flex; flex-direction: column; line-height: 1; color: var(--gold-soft); }
