@@ -267,11 +267,12 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 }
 .about-hero-title {
   font-family: var(--serif);
-  font-size: clamp(1.9rem, 3.3vw, 3rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.35rem);
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.2;
   color: var(--cream);
   margin: 0;
+  text-wrap: balance;
 }
 .about-hero-lede {
   font-family: var(--serif);
