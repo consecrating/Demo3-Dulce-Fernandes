@@ -210,7 +210,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 .benefits {
   position: relative;
   background: var(--cream);
-  background-image: url("../assets/img/benefits-watercolor.svg?v=3");
+  background-image: linear-gradient(rgba(253, 248, 238, 0.28), rgba(253, 248, 238, 0.28)), url("../assets/img/benefits-bg.jpg");
   background-size: cover;
   background-position: center;
 }
