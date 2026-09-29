@@ -116,11 +116,11 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
 .brand-tag { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; margin-top: 6px; color: var(--gold-soft); }
 
 .primary-nav { display: flex; align-items: center; gap: clamp(16px, 1.8vw, 30px); }
-.nav-link { font-size: 1rem; font-weight: 500; color: var(--cream); position: relative; padding: 4px 0; transition: color 0.2s var(--ease); }
+.nav-link { font-size: 1.1rem; font-weight: 500; color: var(--cream); position: relative; padding: 4px 0; transition: color 0.2s var(--ease); }
 .nav-link::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 2px; background: var(--gold); transition: width 0.25s var(--ease); }
 .nav-link:hover { color: var(--gold-soft); }
-.nav-link.is-active { color: #3F3D38; }
-.nav-link.is-active::after { width: 100%; }
+.nav-link.is-active { color: #d58546; }
+.nav-link.is-active::after { width: 100%; background: #d58546; }
 
 /* ---------- Dropdown ---------- */
 .nav-item { position: relative; display: inline-flex; }
