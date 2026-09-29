@@ -1,71 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Soft watercolour wash with blue splashes on a cream ground">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Soft cream watercolour with blue splashes at the edges">
   <defs>
-    <!-- soft watercolour blur -->
-    <filter id="wc" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="34" />
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="30" />
     </filter>
-    <!-- organic edge distortion for a painterly feel -->
-    <filter id="rough" x="-15%" y="-15%" width="130%" height="130%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="7" result="n" />
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="60" />
-      <feGaussianBlur stdDeviation="16" />
+    <filter id="soft2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="20" />
     </filter>
-    <!-- paper grain -->
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
       <feColorMatrix type="saturate" values="0" />
-      <feComponentTransfer><feFuncA type="linear" slope="0.045" /></feComponentTransfer>
+      <feComponentTransfer><feFuncA type="linear" slope="0.04" /></feComponentTransfer>
       <feComposite operator="over" in2="SourceGraphic" />
     </filter>
-    <radialGradient id="centerLight" cx="50%" cy="50%" r="62%">
-      <stop offset="0" stop-color="#fefaf1" stop-opacity="0.95" />
-      <stop offset="55%" stop-color="#fdf7ec" stop-opacity="0.55" />
-      <stop offset="100%" stop-color="#fdf7ec" stop-opacity="0" />
+    <radialGradient id="centerLight" cx="50%" cy="50%" r="60%">
+      <stop offset="0" stop-color="#fefbf4" stop-opacity="1" />
+      <stop offset="42%" stop-color="#fdf8ee" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#fdf8ee" stop-opacity="0" />
     </radialGradient>
   </defs>
 
   <!-- cream base -->
-  <rect width="1600" height="520" fill="#fdf7ec" />
+  <rect width="1600" height="460" fill="#fdf8ee" />
 
-  <!-- BLUE splashes (dominant), painterly edges -->
-  <g filter="url(#rough)" opacity="0.9">
-    <!-- top-left cluster -->
-    <ellipse cx="70" cy="60" rx="180" ry="120" fill="#2f8faa" />
-    <ellipse cx="30" cy="180" rx="130" ry="150" fill="#1c6f8c" />
-    <ellipse cx="220" cy="30" rx="120" ry="80" fill="#4aa7c0" />
-    <!-- bottom-left cluster -->
-    <ellipse cx="60" cy="470" rx="180" ry="140" fill="#227d97" />
-    <ellipse cx="240" cy="500" rx="150" ry="90" fill="#3f9cb6" />
-    <!-- top-right cluster -->
-    <ellipse cx="1540" cy="70" rx="180" ry="130" fill="#2f8faa" />
-    <ellipse cx="1420" cy="30" rx="130" ry="80" fill="#4aa7c0" />
-    <!-- bottom-right cluster -->
-    <ellipse cx="1560" cy="460" rx="190" ry="150" fill="#1c6f8c" />
-    <ellipse cx="1380" cy="510" rx="150" ry="90" fill="#3f9cb6" />
-    <!-- a couple of deeper teal accents -->
-    <ellipse cx="150" cy="360" rx="90" ry="70" fill="#16566b" opacity="0.8" />
-    <ellipse cx="1470" cy="330" rx="90" ry="70" fill="#16566b" opacity="0.8" />
+  <!-- BLUE splashes at corners and side edges (dominant) -->
+  <g filter="url(#soft)" opacity="0.8">
+    <!-- corners -->
+    <ellipse cx="-10" cy="-10" rx="250" ry="190" fill="#2f8faa" />
+    <ellipse cx="1610" cy="-10" rx="250" ry="190" fill="#2f8faa" />
+    <ellipse cx="-10" cy="470" rx="250" ry="190" fill="#227d97" />
+    <ellipse cx="1610" cy="470" rx="250" ry="190" fill="#227d97" />
+    <!-- side-edge blooms -->
+    <ellipse cx="-30" cy="230" rx="150" ry="170" fill="#3f9cb6" />
+    <ellipse cx="1630" cy="230" rx="150" ry="170" fill="#3f9cb6" />
+    <!-- deeper teal touches in the corners -->
+    <ellipse cx="40" cy="60" rx="120" ry="90" fill="#16566b" opacity="0.7" />
+    <ellipse cx="1560" cy="400" rx="120" ry="90" fill="#16566b" opacity="0.7" />
   </g>
 
-  <!-- warm accents (subtle, secondary to blue) -->
-  <g filter="url(#wc)" opacity="0.55">
-    <ellipse cx="360" cy="500" rx="150" ry="80" fill="#f4c9a0" />
-    <ellipse cx="1250" cy="500" rx="150" ry="80" fill="#f0b7ad" />
-    <ellipse cx="470" cy="30" rx="130" ry="70" fill="#f5d79a" />
-    <ellipse cx="1120" cy="20" rx="120" ry="70" fill="#f2b9b0" />
+  <!-- lighter blue mid tones for depth -->
+  <g filter="url(#soft2)" opacity="0.5">
+    <ellipse cx="120" cy="380" rx="120" ry="80" fill="#7cc3d6" />
+    <ellipse cx="1490" cy="90" rx="120" ry="80" fill="#7cc3d6" />
+  </g>
+
+  <!-- subtle warm accents (secondary) -->
+  <g filter="url(#soft)" opacity="0.38">
+    <ellipse cx="520" cy="440" rx="150" ry="70" fill="#f4cf9c" />
+    <ellipse cx="1080" cy="20" rx="150" ry="70" fill="#f2bcae" />
   </g>
 
   <!-- fine blue splatter dots near the edges -->
-  <g fill="#2f8faa" opacity="0.55">
-    <circle cx="300" cy="120" r="5" /><circle cx="360" cy="90" r="3" /><circle cx="250" cy="250" r="4" />
-    <circle cx="180" cy="440" r="5" /><circle cx="330" cy="470" r="3" /><circle cx="120" cy="300" r="3" />
-    <circle cx="1300" cy="110" r="5" /><circle cx="1360" cy="80" r="3" /><circle cx="1420" cy="250" r="4" />
-    <circle cx="1320" cy="450" r="5" /><circle cx="1250" cy="470" r="3" /><circle cx="1480" cy="300" r="3" />
+  <g fill="#2f8faa" opacity="0.5">
+    <circle cx="270" cy="70" r="5" /><circle cx="330" cy="45" r="3" /><circle cx="210" cy="200" r="4" />
+    <circle cx="180" cy="410" r="5" /><circle cx="300" cy="430" r="3" /><circle cx="120" cy="300" r="3" />
+    <circle cx="1330" cy="70" r="5" /><circle cx="1390" cy="45" r="3" /><circle cx="1410" cy="220" r="4" />
+    <circle cx="1330" cy="410" r="5" /><circle cx="1280" cy="430" r="3" /><circle cx="1470" cy="300" r="3" />
   </g>
 
-  <!-- keep the middle light so text stays readable -->
-  <rect width="1600" height="520" fill="url(#centerLight)" />
+  <!-- strong light centre so the text stays readable -->
+  <rect width="1600" height="460" fill="url(#centerLight)" />
 
   <!-- paper grain -->
-  <rect width="1600" height="520" filter="url(#grain)" opacity="0.5" />
+  <rect width="1600" height="460" filter="url(#grain)" opacity="0.45" />
 </svg>
