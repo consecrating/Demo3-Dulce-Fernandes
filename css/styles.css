@@ -255,8 +255,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: clamp(30px, 3.6vw, 48px);
+  justify-content: center;   /* centre the copy block; moderate internal gaps */
+  padding: clamp(28px, 4vw, 52px) 0;
 }
 .about-eyebrow {
   font-family: var(--sans);
@@ -290,8 +290,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   line-height: 1.65;
 }
 .about-hero-credential .gold { color: var(--gold-soft); font-weight: 600; }
-.ahc-mid { margin-top: clamp(36px, 5.5vw, 92px); }
-.about-hero-btn { align-self: flex-start; margin: 0; }
+.ahc-mid { margin-top: clamp(36px, 4.5vw, 64px); }
+.about-hero-btn { align-self: flex-start; margin-top: clamp(36px, 4.5vw, 64px); }
 
 /* Story section (watercolour) */
 .about-story {
