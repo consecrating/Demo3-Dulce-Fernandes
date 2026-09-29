@@ -231,7 +231,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
    ============================================================ */
 /* Hero band (teal) */
 .about-hero {
-  background: linear-gradient(135deg, #1a6472 0%, #124a56 100%);
+  background: #3F3D38;
   color: var(--cream);
   padding-top: 92px; /* clear the fixed header */
 }
@@ -242,13 +242,13 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   align-items: center;
   padding-block: clamp(38px, 5vw, 70px);
 }
+.about-hero-photo { align-self: end; }
 .about-hero-photo img {
   width: 100%;
-  max-height: 620px;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 14px;
-  box-shadow: 0 26px 70px -30px rgba(0, 0, 0, 0.55);
+  max-height: 640px;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
 }
 .about-eyebrow {
   font-family: var(--sans);
