@@ -239,8 +239,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   display: grid;
   grid-template-columns: 0.92fr 1fr;
   gap: clamp(32px, 5vw, 64px);
-  align-items: end;
-  padding-top: clamp(30px, 4vw, 56px);
+  align-items: stretch;
+  padding-top: clamp(30px, 3.6vw, 48px);
   padding-bottom: 0; /* let the cut-out reach the bottom edge */
 }
 .about-hero-photo { align-self: end; }
@@ -249,11 +249,20 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   height: auto;
   display: block;   /* full-width cut-out, touches the section bottom */
 }
+/* Copy column: eyebrow aligns with photo top, middle text distanced,
+   button lifted off the bottom by the same distance as the top gap */
+.about-hero-copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: clamp(30px, 3.6vw, 48px);
+}
 .about-eyebrow {
   font-family: var(--sans);
-  font-size: 0.82rem; font-weight: 600;
+  font-size: 0.86rem; font-weight: 600;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--gold-soft);
+  color: #ffffff;
   margin: 0 0 18px;
 }
 .about-hero-title {
@@ -262,21 +271,25 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   font-weight: 500;
   line-height: 1.12;
   color: var(--cream);
-  margin: 0 0 22px;
+  margin: 0;
 }
 .about-hero-lede {
-  color: rgba(251, 246, 238, 0.9);
-  max-width: 56ch; margin: 0 0 20px;
-  line-height: 1.65;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.18rem, 1.7vw, 1.45rem);
+  color: rgba(251, 246, 238, 0.92);
+  max-width: 52ch;
+  margin: clamp(24px, 3.5vw, 40px) 0;
+  line-height: 1.5;
 }
 .about-hero-credential {
   color: rgba(251, 246, 238, 0.85);
-  max-width: 56ch; margin: 0 0 30px;
+  max-width: 56ch; margin: 0 0 26px;
   line-height: 1.65;
 }
 .about-hero-credential .gold { color: var(--gold-soft); font-weight: 600; }
-.about-hero-btn { margin-top: 2px; }
-.btn-arrow { margin-left: 9px; }
+.about-hero-btn { align-self: flex-start; margin: 0; }
 
 /* Story section (watercolour) */
 .about-story {
@@ -326,6 +339,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   .about-hero-grid, .about-story-grid { grid-template-columns: 1fr; }
   .about-hero-grid { align-items: center; padding-bottom: clamp(32px, 6vw, 48px); }
   .about-hero-photo { max-width: 380px; margin-inline: auto; align-self: center; }
+  .about-hero-copy { display: block; padding-bottom: 0; }
   .about-story-photo { position: static; max-width: 520px; margin-inline: auto; }
 }
 
