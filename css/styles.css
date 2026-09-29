@@ -231,7 +231,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
    ============================================================ */
 /* Hero band (teal) */
 .about-hero {
-  background: #3F3D38;
+  background: #211f24;
   color: var(--cream);
   padding-top: 92px; /* clear the fixed header */
 }
