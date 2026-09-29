@@ -253,6 +253,7 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
    button lifted off the bottom by the same distance as the top gap */
 .about-hero-copy {
   align-self: stretch;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;   /* centre the copy block; moderate internal gaps */
@@ -263,7 +264,10 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   font-size: 0.86rem; font-weight: 600;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: #ffffff;
-  margin: 0 0 18px;
+  margin: 0;
+  position: absolute;        /* lift the eyebrow up to the lady's head level */
+  top: clamp(60px, 9vw, 120px);
+  left: 0;
 }
 .about-hero-title {
   font-family: var(--serif);
@@ -341,7 +345,8 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   .about-hero-grid, .about-story-grid { grid-template-columns: 1fr; }
   .about-hero-grid { align-items: center; padding-bottom: clamp(32px, 6vw, 48px); }
   .about-hero-photo { max-width: 380px; margin-inline: auto; align-self: center; }
-  .about-hero-copy { display: block; padding-bottom: 0; }
+  .about-hero-copy { display: block; padding: 0; }
+  .about-eyebrow { position: static; margin: 0 0 16px; }
   .about-story-photo { position: static; max-width: 520px; margin-inline: auto; }
 }
 
