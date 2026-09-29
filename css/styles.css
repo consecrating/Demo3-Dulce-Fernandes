@@ -315,30 +315,31 @@ h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
   font-family: var(--sans);
   font-size: clamp(1.35rem, 2.1vw, 1.8rem);
   font-weight: 700;
-  color: #16566b;
+  color: #3F3D38;
   margin: 0 0 22px;
   line-height: 1.25;
 }
 .about-story-copy p { color: #3F3D38; margin: 0 0 18px; line-height: 1.72; }
-.about-story-copy strong { color: #16566b; font-weight: 700; }
-.about-story-copy em { font-style: italic; font-family: var(--serif); font-size: 1.12em; color: #16566b; font-weight: 600; }
+.about-story-copy strong { color: #3F3D38; font-weight: 700; }
+.about-story-copy em { font-style: italic; font-family: inherit; font-size: inherit; color: #3F3D38; font-weight: 500; }
 .about-story-photo { position: sticky; top: 100px; }
 .about-story-photo img { width: 100%; border-radius: 14px; box-shadow: 0 26px 70px -30px rgba(0, 0, 0, 0.4); }
 .about-pullquote { margin: clamp(44px, 6vw, 72px) 0 0; max-width: 920px; }
 .about-pullquote blockquote {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-style: italic;
-  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.4vw, 1.95rem);
   line-height: 1.42;
-  color: #16566b;
+  color: #3F3D38;
 }
 .about-pullquote figcaption {
   margin-top: 16px;
   font-family: var(--sans);
   font-size: 0.85rem; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: #16566b;
+  color: #3F3D38;
 }
 
 @media (max-width: 860px) {
