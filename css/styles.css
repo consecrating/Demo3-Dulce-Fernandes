@@ -1,0 +1,419 @@
+/* ============================================================
+   Dulce Fernandes - Transformational Coaching (Home)
+   ============================================================ */
+
+:root {
+  --cream: #fbf6ee;
+  --gold: #c8952f;
+  --gold-soft: #e6c882;
+  --navy: #1f3352;      /* benefit headings */
+  --blue: #3f6ba3;      /* benefit subtext */
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --container: 1200px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: #241b14;
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Content lock (deterrent) ---------- */
+html.locked, html.locked body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+html.locked input,
+html.locked textarea,
+html.locked [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+h1, h3 { font-family: var(--serif); margin: 0; line-height: 1.08; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 15px 34px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.btn-primary {
+  background: linear-gradient(120deg, #f6d873 0%, #e8a94a 48%, #d67b39 100%); /* clear gold to amber to terracotta */
+  color: #2a1c06;            /* near-black brown, stays readable across the whole gradient */
+  font-weight: 700;
+  font-size: 1.12rem;        /* slightly larger for the wider layout */
+  padding: 18px 44px;
+  text-shadow: 0 1px 0 rgba(255, 236, 200, 0.5); /* keeps text crisp over the gradient */
+  box-shadow: 0 12px 26px -12px rgba(168, 118, 29, 0.75);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(120deg, #f8de84 0%, #edb055 48%, #dd8442 100%);
+  color: #2a1c06;
+  box-shadow: 0 18px 36px -12px rgba(168, 118, 29, 0.9);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding: 12px 0;
+  background: rgba(63, 61, 56, 0.2);   /* highly transparent #3F3D38 */
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s var(--ease), padding 0.3s var(--ease);
+}
+/* Stay transparent on scroll (no opaque state) */
+.site-header.is-scrolled {
+  background: rgba(63, 61, 56, 0.2);
+  padding: 8px 0;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 56px;
+  max-width: none;
+  /* Left keeps the logo aligned with the hero; right padding nudges the nav in from the edge */
+  padding-inline: clamp(28px, 5vw, 84px) clamp(44px, 5vw, 92px);
+}
+
+.brand { display: inline-flex; flex-direction: column; line-height: 1; color: var(--gold-soft); }
+.brand-name { font-family: var(--serif); font-size: 1.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.brand-drop { font-size: 2.1rem; }
+.brand-tag { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; margin-top: 6px; color: var(--gold-soft); }
+
+.primary-nav { display: flex; align-items: center; gap: clamp(16px, 1.8vw, 30px); }
+.nav-link { font-size: 1.1rem; font-weight: 500; color: var(--cream); position: relative; padding: 4px 0; transition: color 0.2s var(--ease); }
+.nav-link::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 2px; background: var(--gold); transition: width 0.25s var(--ease); }
+.nav-link:hover { color: var(--gold-soft); }
+.nav-link.is-active { color: var(--gold-soft); }
+.nav-link.is-active::after { width: 100%; background: var(--gold-soft); }
+
+/* ---------- Dropdown ---------- */
+.nav-item { position: relative; display: inline-flex; }
+.nav-link-toggle { display: inline-flex; align-items: center; gap: 6px; }
+.nav-caret { transition: transform 0.25s var(--ease); }
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  min-width: 224px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background: rgba(63, 61, 56, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  box-shadow: 0 24px 50px -22px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease), visibility 0.22s;
+}
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -14px; left: 0; right: 0;
+  height: 14px;
+}
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu,
+.nav-item.is-open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-item:hover .nav-caret,
+.nav-item.is-open .nav-caret { transform: rotate(180deg); }
+.dropdown-link {
+  padding: 11px 16px;
+  border-radius: 9px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--cream);
+  white-space: nowrap;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+.dropdown-link:hover, .dropdown-link:focus-visible { background: rgba(230, 200, 130, 0.16); color: var(--gold-soft); }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
+.nav-toggle span { width: 26px; height: 2px; background: var(--cream); border-radius: 2px; transition: transform 0.3s var(--ease), opacity 0.3s var(--ease); }
+
+/* ---------- Hero ---------- */
+/* Full artwork is shown in flow (no cover-crop), so nothing is cut off.
+   Text is overlaid on the dark left zone and constrained so it never
+   reaches the figure. */
+.hero { position: relative; overflow: hidden; background: #140d09; }
+.hero-media { display: block; width: 100%; line-height: 0; }
+.hero-media img { width: 100%; height: auto; display: block; }
+.hero-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(18, 13, 10, 0.92) 0%, rgba(18, 13, 10, 0.72) 24%, rgba(18, 13, 10, 0.18) 46%, rgba(18, 13, 10, 0) 64%);
+}
+.hero-inner {
+  position: absolute; inset: 0; z-index: 2;
+  max-width: none; width: 100%;
+  display: flex; align-items: center;
+  padding: 90px clamp(24px, 4vw, 40px) 40px clamp(28px, 5vw, 84px);
+}
+.hero-copy { max-width: min(460px, 42vw); color: var(--cream); }
+.hero-title {
+  font-size: clamp(2rem, 3.4vw, 3.3rem);
+  font-weight: 600;
+  color: var(--gold-soft);
+  letter-spacing: 0.005em;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.4);
+}
+.hero-sub {
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  color: rgba(251, 246, 238, 0.9);
+  max-width: 42ch;
+  margin: 24px 0 34px;
+  line-height: 1.6;
+}
+
+/* ---------- Benefit strip ---------- */
+.benefits {
+  position: relative;
+  background: var(--cream);
+  background-image: linear-gradient(rgba(253, 248, 238, 0.28), rgba(253, 248, 238, 0.28)), url("../assets/img/benefits-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: none;
+  /* Match the header/hero so the strip aligns with the logo and nav */
+  padding-inline: clamp(28px, 5vw, 84px);
+}
+.benefit { padding: 34px 26px; text-align: center; position: relative; }
+.benefit + .benefit::before { content: ""; position: absolute; left: 0; top: 28%; bottom: 28%; width: 1px; background: rgba(31, 51, 82, 0.18); }
+.benefit h3 { font-size: 1.7rem; font-weight: 600; color: #3F3D38; margin-bottom: 8px; }
+.benefit p { margin: 0; color: #3F3D38; font-size: 1rem; font-weight: 500; }
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+/* Hero band (teal) */
+.about-hero {
+  background: #211f24;
+  color: var(--cream);
+  padding-top: 92px; /* clear the fixed header */
+}
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: stretch;
+  padding-top: clamp(30px, 3.6vw, 48px);
+  padding-bottom: 0; /* let the cut-out reach the bottom edge */
+}
+.about-hero-photo { align-self: end; }
+.about-hero-photo img {
+  width: 100%;
+  height: auto;
+  display: block;   /* full-width cut-out, touches the section bottom */
+}
+/* Copy column: eyebrow aligns with photo top, middle text distanced,
+   button lifted off the bottom by the same distance as the top gap */
+.about-hero-copy {
+  align-self: stretch;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centre the copy block; moderate internal gaps */
+  padding: clamp(28px, 4vw, 52px) 0;
+}
+.about-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.86rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  position: absolute;        /* lift the eyebrow up to the lady's head level */
+  top: clamp(10px, 1.6vw, 22px);
+  left: 0;
+}
+.about-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--cream);
+  margin: 0;
+  text-wrap: balance;
+}
+.about-hero-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.18rem, 1.7vw, 1.45rem);
+  color: rgba(251, 246, 238, 0.92);
+  max-width: 52ch;
+  margin: 0 0 clamp(20px, 2.4vw, 30px); /* small controlled gap to the credential line */
+  line-height: 1.5;
+}
+.about-hero-credential {
+  color: rgba(251, 246, 238, 0.85);
+  max-width: 56ch; margin: 0;
+  line-height: 1.65;
+}
+.about-hero-credential .gold { color: var(--gold-soft); font-weight: 600; }
+.ahc-mid { margin-top: clamp(36px, 4.5vw, 64px); }
+.about-hero-btn { align-self: flex-start; margin-top: clamp(36px, 4.5vw, 64px); }
+
+/* Story section (watercolour) */
+.about-story {
+  background: var(--cream);
+  background-image: linear-gradient(rgba(253, 248, 238, 0.4), rgba(253, 248, 238, 0.4)), url("../assets/img/benefits-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-block: clamp(56px, 8vw, 104px);
+}
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+}
+.about-story-head {
+  font-family: var(--sans);
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  font-weight: 700;
+  color: #3F3D38;
+  margin: 0 0 22px;
+  line-height: 1.25;
+}
+.about-story-copy p { color: #3F3D38; margin: 0 0 18px; line-height: 1.72; }
+.about-story-copy strong { color: #3F3D38; font-weight: 700; }
+.about-story-copy em { font-style: italic; font-family: inherit; font-size: inherit; color: #3F3D38; font-weight: 500; }
+.about-story-photo { position: sticky; top: 100px; }
+.about-story-photo img { width: 100%; border-radius: 14px; box-shadow: 0 26px 70px -30px rgba(0, 0, 0, 0.4); }
+.about-pullquote { margin: clamp(44px, 6vw, 72px) 0 0; max-width: 920px; }
+.about-pullquote blockquote {
+  margin: 0;
+  font-family: var(--sans);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2.4vw, 1.95rem);
+  line-height: 1.42;
+  color: #3F3D38;
+}
+.about-pullquote figcaption {
+  margin-top: 18px;
+  font-family: var(--sans);
+  font-size: 1.05rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: #3F3D38;
+}
+
+@media (max-width: 860px) {
+  .about-hero-grid, .about-story-grid { grid-template-columns: 1fr; }
+  .about-hero-grid { align-items: center; padding-bottom: clamp(32px, 6vw, 48px); }
+  .about-hero-photo { max-width: 380px; margin-inline: auto; align-self: center; }
+  .about-hero-copy { display: block; padding: 0; }
+  .about-eyebrow { position: static; margin: 0 0 16px; }
+  .about-story-photo { position: static; max-width: 520px; margin-inline: auto; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .benefit:nth-child(2)::before { display: none; }
+  .benefit:nth-child(3), .benefit:nth-child(4) { border-top: 1px solid rgba(31, 51, 82, 0.14); }
+}
+
+@media (max-width: 720px) {
+  .container { padding-inline: 22px; }
+  .nav-inner, .benefits-grid { padding-inline: 22px; }
+  /* backdrop-filter on the header makes fixed children position to the header
+     box instead of the viewport, which distorted the drawer. Disable on mobile. */
+  .site-header, .site-header.is-scrolled { backdrop-filter: none; }
+  .nav-toggle { display: flex; position: relative; z-index: 70; }
+  .primary-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(82vw, 320px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 96px 30px 40px;
+    background: rgba(63, 61, 56, 0.92);
+    transform: translateX(100%);
+    transition: transform 0.35s var(--ease);
+    z-index: 60;
+    overflow-y: auto;
+    box-shadow: -14px 0 44px -22px rgba(0, 0, 0, 0.7);
+  }
+  .primary-nav.is-open { transform: translateX(0); }
+  .nav-item { display: flex; flex-direction: column; width: 100%; }
+  .nav-link-toggle { justify-content: space-between; width: 100%; }
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: hidden;
+    display: none;
+    min-width: 0;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 6px 0 0 14px;
+    background: none;
+    border: 0;
+    border-left: 2px solid rgba(230, 200, 130, 0.3);
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .nav-item.is-open .dropdown-menu { display: flex; visibility: visible; transform: none; }
+  .dropdown-link { padding: 9px 12px; }
+  .nav-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.is-open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hero-scrim { background: linear-gradient(180deg, rgba(18,13,10,0.82) 0%, rgba(18,13,10,0.5) 34%, rgba(18,13,10,0.1) 62%, rgba(18,13,10,0) 100%); }
+  .hero-inner { align-items: flex-start; padding: 104px 22px 40px 22px; }
+  .hero-copy { max-width: 100%; }
+  .hero-title { font-size: clamp(2rem, 8vw, 2.9rem); }
+}
+
+@media (max-width: 460px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .benefit + .benefit::before { display: none; }
+  .benefit:nth-child(n+2) { border-top: 1px solid rgba(31, 51, 82, 0.14); }
+}
